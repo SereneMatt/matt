@@ -1,4 +1,4 @@
-export const serviceMap = {
-  lambda: 'AWS',
+export const servicePrefixMap: Record<string, string> = {
+  Lambda: 'AWS',
   'API Gateway': 'Amazon'
 };

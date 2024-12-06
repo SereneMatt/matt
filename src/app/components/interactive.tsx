@@ -4,8 +4,11 @@ import React, { useState } from 'react';
 
 import { servicePrefixMap } from '../../data';
 
+const services = Object.keys(servicePrefixMap);
+
 const Interactive = () => {
-  const [serviceName, setServiceName] = useState('Lambda');
+  const [serviceIndex, setServiceIndex] = useState(0);
+  const [serviceName, setServiceName] = useState(services[serviceIndex]);
   const [jiggleClass, setJiggleClass] = useState(false);
 
   const handleClick = (prefix: string, service: string) => {
@@ -14,6 +17,11 @@ const Interactive = () => {
     } else {
       setJiggleClass(true);
     }
+  };
+
+  const handleNextClick = () => {
+    setServiceIndex(serviceIndex + 1);
+    setServiceName(services[serviceIndex]);
   };
 
   return (
@@ -35,6 +43,12 @@ const Interactive = () => {
           {'Amazon'}
         </button>
       </div>
+      <a
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+        onClick={() => handleNextClick()}
+      >
+        nächste bitte →
+      </a>
     </>
   );
 };

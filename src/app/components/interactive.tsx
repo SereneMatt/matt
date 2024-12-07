@@ -10,10 +10,12 @@ const Interactive = () => {
   const [serviceIndex, setServiceIndex] = useState(0);
   const [serviceName, setServiceName] = useState(services[serviceIndex]);
   const [jiggleClass, setJiggleClass] = useState(false);
+  const [renderNext, setRenderNext] = useState(false);
 
   const handleClick = (prefix: string, service: string) => {
     if (servicePrefixMap[service] === prefix) {
       setServiceName(`${prefix} ${service}`);
+      setRenderNext(true);
     } else {
       setJiggleClass(true);
     }
@@ -43,12 +45,14 @@ const Interactive = () => {
           {'Amazon'}
         </button>
       </div>
-      <a
-        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        onClick={() => handleNextClick()}
-      >
-        nächste bitte →
-      </a>
+      {renderNext && (
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          onClick={() => handleNextClick()}
+        >
+          nächste bitte →
+        </a>
+      )}
     </>
   );
 };

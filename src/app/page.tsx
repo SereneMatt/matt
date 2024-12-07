@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import Interactive from './components/interactive';
 // .click-shake {
 //   background: #20bdbd;

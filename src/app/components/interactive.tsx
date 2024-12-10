@@ -19,9 +19,11 @@ const Interactive = () => {
       setServiceIndex(serviceIndex + 1);
       setRenderNext(true);
     } else {
-      prefix === 'Amazon'
-        ? setJiggleClassAmazon(true)
-        : setJiggleClassAWS(true);
+      if (prefix === 'Amazon') {
+        setJiggleClassAmazon(true);
+      } else {
+        setJiggleClassAWS(true);
+      }
     }
   };
 

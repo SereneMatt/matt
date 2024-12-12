@@ -34,6 +34,8 @@ const Interactive = () => {
     setJiggleClassAWS(false);
   };
 
+  const shouldShowNext = renderNext && serviceIndex < services.length;
+
   return (
     <>
       <div>{serviceName}</div>
@@ -59,7 +61,7 @@ const Interactive = () => {
           </button>
         </div>
       )}
-      {renderNext && (
+      {shouldShowNext && (
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           onClick={() => handleNextClick()}

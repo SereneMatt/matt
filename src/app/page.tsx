@@ -32,7 +32,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn
+          Beyond the cloud ☁️
         </a>
       </footer>
     </div>

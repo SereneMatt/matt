@@ -8,5 +8,6 @@ export const servicePrefixMap: Record<string, string> = {
   CloudFront: 'Amazon',
   Route53: 'Amazon',
   Kinesis: 'Amazon',
-  ECR: 'Amazon'
+  ECR: 'Amazon',
+  'Secrets Manager': 'AWS'
 };
